@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickLink - URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">QuickLink</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Transform Your Long URLs into Short Links</h1>
+            <p>Quick, secure, and professional URL shortening service</p>
+        </section>
+
+        <section id="shortener" class="shortener-container">
+            <div class="input-group">
+                <input type="url" id="urlInput" placeholder="Enter your long URL here..." />
+                <div class="verification-container">
+                    <div id="captcha"></div>
+                    <input type="text" id="captchaInput" placeholder="Enter verification code" />
+                </div>
+                <button id="shortenBtn" class="primary-btn">
+                    <i class="fas fa-link"></i> Shorten URL
+                </button>
+            </div>
+            <div id="result" class="result-container hidden">
+                <h3>Your Shortened URL</h3>
+                <div class="result-box">
+                    <input type="text" id="shortUrl" readonly />
+                    <button id="copyBtn" class="secondary-btn">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Advanced encryption and protection</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Fast</h3>
+                    <p>Lightning-quick URL processing</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics</h3>
+                    <p>Track your link performance</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Developer</h2>
+            <div class="developer-info">
+                <img src="{{ url_for('static', filename='mon.png') }}" alt="Mina Nady" class="developer-image" />                <h3>Mina Nady</h3>
+                <p>Professional Full-Stack Developer</p>
+                <a href="https://minanadyfarag.github.io/my-portfolio" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i> View Portfolio
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 QuickLink. Created by Mina Nady</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
