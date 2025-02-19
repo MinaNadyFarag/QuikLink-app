@@ -1,0 +1,14 @@
+name: Anti-Copy Guard
+
+on:  
+  push:
+  pull_request:
+  fork:
+    types: [created]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Owner
+        run: echo "⚠️ Someone tried to copy your repository! Check the forks or clones."
